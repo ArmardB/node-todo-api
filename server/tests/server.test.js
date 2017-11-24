@@ -91,7 +91,7 @@
 
     it('should return a 404 if to do not found', (done) => {
       // make request using new ObjectID, expect 404
-      const id = new ObjectID();
+      const id = new ObjectID().toHexString();
       request(app)
         .get(`/todos/${id}`)
         .expect(404)
